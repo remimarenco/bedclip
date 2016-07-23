@@ -27,5 +27,9 @@
         </test>
     </tests>
     <help><![CDATA[
+        Remove lines from bed file that refer to off-chromosome places.
+
+        This Galaxy wrapper is a bedClip wrap and ask you the fasta files,
+        instead of the chrom.sizes required usually by bedClip.
     ]]></help>
 </tool>
