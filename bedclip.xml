@@ -1,0 +1,31 @@
+<tool id="bedclip" name="bedClip" version="0.1.0">
+    <requirements>
+        <requirement type="package" version="332">ucsc-fatotwobit</requirement>
+        <requirement type="package" version="324">ucsc-twobitinfo</requirement>
+        <requirement type="package" version="332">ucsc-bedclip</requirement>
+    </requirements>
+    <stdio>
+        <exit_code range="1:" />
+    </stdio>
+    <command><![CDATA[
+        faToTwoBit "$ref_genome" two_bit_ref_genome;
+        twoBitInfo two_bit_ref_genome chrom_sizes;
+        bedClip "$bed_file" chrom_sizes "$bed_clipped";
+    ]]></command>
+    <inputs>
+        <param type="data" name="ref_genome" format="fasta" />
+        <param type="data" name="bed_file" format="bed" />
+    </inputs>
+    <outputs>
+        <data name="bed_clipped" format="bed" />
+    </outputs>
+    <tests>
+        <test>
+            <param name="ref_genome" value="input.fasta"/>
+            <param name="bed_file" value="input.bed"/>
+            <output name="bed_clipped" file="output.bed"/>
+        </test>
+    </tests>
+    <help><![CDATA[
+    ]]></help>
+</tool>

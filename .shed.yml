@@ -1,0 +1,5 @@
+categories: []
+description: Remove lines from bed file that refer to off-chromosome places
+name: bedclip
+owner: rmarenco
+remote_repository_url: https://github.com/remimarenco/bedclip
